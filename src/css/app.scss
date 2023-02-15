@@ -1,0 +1,62 @@
+// app global css in SCSS form
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Light.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Regular.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Medium.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-RegularItalic.otf");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Semibold.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Bold.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/Tiempos-Font/TiemposHeadline-Black.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px !important;
+  }
+}
