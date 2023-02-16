@@ -12,10 +12,11 @@ export default defineComponent({
 <style lang="scss">
 a {
   text-decoration: none;
-  color: #271902;
+  color: $primary;
+  font-weight: bold;
 }
 
 a:hover {
-  color: #f8c977;
+  color: #495579;
 }
 </style>

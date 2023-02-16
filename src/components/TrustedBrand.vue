@@ -1,5 +1,5 @@
 <template>
-  <div class="trusted-brand__title">
+  <div class="trusted-brand__title q-mt-xl">
     Vinylata is trusted by many top records
   </div>
   <div class="flex flex-center q-mt-xs">
@@ -41,7 +41,6 @@
   font-weight: 500;
   text-align: center;
   color: #888;
-  margin-top: 4rem;
 }
 
 .trusted-brand__img {

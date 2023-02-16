@@ -57,7 +57,5 @@ defineProps({
 }
 .index-page__hero-section {
   color: white;
-
-  font-family: "Roboto", sans-serif;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <q-header class="index-page__header" reveal elevated>
-    <div class="index-page__header-text text-h4 text-bold">
-      <router-link class="col-2 q-ml-lg" to="/"> Vinylata</router-link>
+  <q-header class="index-page__header" reveal>
+    <div class="index-page__header-text text-h4 text-bold q-ml-lg">
+      <q-img width="8rem" src="/logo.png"></q-img>
     </div>
     <ul class="flex flex-center text-subtitle1">
       <li><router-link class="col-2" to="/"> ABOUT</router-link></li>
@@ -48,14 +48,18 @@
       ></NewSection>
     </SwiperSlide>
   </Swiper>
-
-  <TrustedBrand></TrustedBrand>
+  <AppContainer>
+    <TrustedBrand></TrustedBrand>
+    <VinylGenre class="index-page__genre text-primary"></VinylGenre>
+  </AppContainer>
 </template>
 
 <script setup>
 import NewSection from "../components/NewSection.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import TrustedBrand from "../components/TrustedBrand.vue";
+import VinylGenre from "../components/VinylGenre.vue";
+import AppContainer from "../components/AppContainer.vue";
 // Import Swiper styles
 import "swiper/css";
 
@@ -76,13 +80,7 @@ const modules = [Pagination, Autoplay];
   align-items: center;
 }
 
-.index-page__header-text {
-  color: #613f05;
-}
 li {
   padding: 0 1.25rem;
-}
-.swiper-pagination-bullet-active {
-  color: $primary;
 }
 </style>
