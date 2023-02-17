@@ -48,10 +48,12 @@
       ></NewSection>
     </SwiperSlide>
   </Swiper>
-  <AppContainer>
-    <TrustedBrand></TrustedBrand>
-    <VinylGenre class="index-page__genre text-primary"></VinylGenre>
-  </AppContainer>
+  <TrustedBrand></TrustedBrand>
+  <AboutSection></AboutSection>
+
+  <VinylGenre class="index-page__genre text-primary"></VinylGenre>
+
+  <CheckinSection></CheckinSection>
 </template>
 
 <script setup>
@@ -59,8 +61,12 @@ import NewSection from "../components/NewSection.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import TrustedBrand from "../components/TrustedBrand.vue";
 import VinylGenre from "../components/VinylGenre.vue";
-import AppContainer from "../components/AppContainer.vue";
+
+import AboutSection from "../components/AboutSection.vue";
+import CheckinSection from "../components/CheckinSection.vue";
+
 // Import Swiper styles
+
 import "swiper/css";
 
 import "swiper/css/pagination";
