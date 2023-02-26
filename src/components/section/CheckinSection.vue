@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-import AppContainer from "./AppContainer.vue";
+import AppContainer from "../common/AppContainer.vue";
 </script>
 
 <style lang="scss" scoped>

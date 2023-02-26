@@ -56,8 +56,8 @@
 </template>
 
 <script setup>
-import TheGenre from "../components/TheGenre.vue";
-import AppContainer from "../components/AppContainer.vue";
+import TheGenre from "../TheGenre.vue";
+import AppContainer from "../common/AppContainer.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useSwiper } from "swiper/vue";
 import "swiper/css";

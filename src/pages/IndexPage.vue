@@ -12,68 +12,23 @@
       </li>
     </ul>
   </q-header>
-  <Swiper
-    :pagination="{
-      dynamicBullets: true,
-    }"
-    :modules="modules"
-    class="mySwiper"
-    :autoplay="{
-      delay: 3000,
-      disableOnInteraction: false,
-    }"
-  >
-    <SwiperSlide>
-      <NewSection
-        buttonText="Shop now"
-        title="Vinyl Discount 50%"
-        extraDetails="Checkin at our shop"
-        imgSrc="background.jpg"
-      ></NewSection>
-    </SwiperSlide>
-    <SwiperSlide>
-      <NewSection
-        buttonText="Order now"
-        title="Dont Have Turntable?"
-        extraDetails="We offer you the best"
-        imgSrc="player.png"
-      ></NewSection>
-    </SwiperSlide>
-    <SwiperSlide>
-      <NewSection
-        buttonText="shop now"
-        title="Newest Collections"
-        extraDetails="Update everyweek"
-        imgSrc="collection.jpg"
-      ></NewSection>
-    </SwiperSlide>
-  </Swiper>
-  <TrustedBrand></TrustedBrand>
+
+  <NewsSection></NewsSection>
+  <BrandSection></BrandSection>
   <AboutSection></AboutSection>
 
-  <VinylGenre class="index-page__genre text-primary"></VinylGenre>
+  <CollectionSection class="index-page__genre text-primary"></CollectionSection>
 
   <CheckinSection></CheckinSection>
 </template>
 
 <script setup>
-import NewSection from "../components/NewSection.vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import TrustedBrand from "../components/TrustedBrand.vue";
-import VinylGenre from "../components/VinylGenre.vue";
-
-import AboutSection from "../components/AboutSection.vue";
-import CheckinSection from "../components/CheckinSection.vue";
-
-// Import Swiper styles
-
-import "swiper/css";
-
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination, Autoplay } from "swiper";
-const modules = [Pagination, Autoplay];
+import TheNews from "../components/TheNews.vue";
+import BrandSection from "../components/section/BrandSection.vue";
+import CollectionSection from "../components/section/CollectionSection.vue";
+import NewsSection from "../components/section/NewsSection.vue";
+import AboutSection from "../components/section/AboutSection.vue";
+import CheckinSection from "../components/section/CheckinSection.vue";
 </script>
 <style lang="scss" scoped>
 .index-page__header {
