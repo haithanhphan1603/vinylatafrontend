@@ -17,6 +17,6 @@ a {
 }
 
 a:hover {
-  color: #495579;
+  color: $indigo-9;
 }
 </style>
