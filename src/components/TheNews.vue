@@ -1,5 +1,8 @@
 <template>
   <q-img class="index-page__hero-image" :ratio="16 / 9" :src="imgSrc">
+    <template #loading>
+      <q-skeleton width="100%" height="100%"></q-skeleton>
+    </template>
     <div class="index-page__hero-section absolute-full row justify-center">
       <div class="index-page__hero-caption col-10 row">
         <p class="new-section__description text-h4 text-regular col-3">
@@ -38,7 +41,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .index-page__hero-image {
-  height: 70vh;
+  height: 75vh;
 }
 .new-section__title,
 .new-section__description {

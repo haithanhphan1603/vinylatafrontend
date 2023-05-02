@@ -49,14 +49,8 @@
   font-style: normal;
   font-weight: 900;
 }
-
-@media (max-width: 600px) {
-  body {
-    font-size: 12px !important;
-  }
-}
-@media (max-width: 1024px) {
-  body {
-    font-size: 14px !important;
+@media (max-width: $breakpoint-xs-max) {
+  html {
+    font-size: 50%;
   }
 }

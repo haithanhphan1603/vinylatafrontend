@@ -15,7 +15,7 @@
         buttonText="Shop now"
         title="Vinyl Discount 50%"
         extraDetails="Checkin at our shop"
-        imgSrc="background.jpg"
+        imgSrc="background.webp"
       ></TheNews>
     </SwiperSlide>
     <SwiperSlide>
@@ -23,7 +23,7 @@
         buttonText="Order now"
         title="Dont Have Turntable?"
         extraDetails="We offer you the best"
-        imgSrc="player.png"
+        imgSrc="player.webp"
       ></TheNews>
     </SwiperSlide>
     <SwiperSlide>
@@ -31,7 +31,7 @@
         buttonText="shop now"
         title="Newest Collections"
         extraDetails="Update everyweek"
-        imgSrc="collection.jpg"
+        imgSrc="collection.webp"
       ></TheNews>
     </SwiperSlide>
   </Swiper>

@@ -8,13 +8,17 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vueuse/core": "^10.1.0",
     "axios": "^0.21.1",
+    "numeral": "^2.0.6",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
+    "scrollreveal": "^4.0.9",
     "swiper": "^9.0.5",
     "vue": "^3.0.0",
     "vue-i18n": "^9.0.0",

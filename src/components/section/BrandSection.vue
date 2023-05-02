@@ -46,8 +46,7 @@
   color: #888;
 }
 .trusted-brand {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding: 4.8rem 0;
 }
 .trusted-brand__img {
   filter: brightness(0);
