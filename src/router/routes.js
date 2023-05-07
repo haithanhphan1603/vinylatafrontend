@@ -1,5 +1,3 @@
-import { triggerRef } from "vue";
-
 const routes = [
   {
     path: "/",
@@ -35,6 +33,28 @@ const routes = [
       {
         path: "/vendors/:id",
         component: () => import("pages/VendorPage.vue"),
+      },
+      {
+        path: "/checkout",
+        component: () => import("pages/CheckoutPage.vue"),
+      },
+      {
+        path: "/auth",
+        component: () => import("pages/AuthPage.vue"),
+        meta: {
+          requiresUnauth: true,
+        },
+      },
+      {
+        path: "/register",
+        component: () => import("pages/RegisterPage.vue"),
+      },
+      {
+        path: "/order",
+        component: () => import("pages/OrderPage.vue"),
+        meta: {
+          requiresAuth: true,
+        },
       },
     ],
   },

@@ -63,9 +63,7 @@ onMounted(() => {
       x: 50,
     },
   });
-  debugger;
 });
-debugger;
 </script>
 
 <style lang="scss" scoped>

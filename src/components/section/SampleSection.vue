@@ -1,83 +1,28 @@
 <template>
   <div class="sample-section row">
-    <q-img class="tape mobile-hide" src="tape.png" width="6rem"></q-img>
-    <div class="col-6 sample-section__pre-order">
+    <div class="sample-section__pre-order">
       <div class="sample-section__section">
         <div class="text-h4 text-bold">
-          <span>Pre-order</span>
+          <div class="text-h6 text-bold text-indigo-5 flex flex-center">
+            VINYLATA'S PREORDER
+          </div>
+          <span class="flex flex-center"
+            >Vinylata always update the latest vinyl</span
+          >
         </div>
-        <div class="row q-col-gutter-x-xl q-mt-lg q-col-gutter-y-xl">
-          <div class="col-6">
+        <div class="row q-px-xl">
+          <div
+            v-for="product in products"
+            class="col-3 q-pt-xl"
+            :key="product.id"
+          >
             <ShopCard
+              :img-src="product.productImage"
+              :product-name="product.productTitle"
+              :artist="product.artist"
+              :price="product.productPricing"
+              :id="product.id"
               currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sample-section__new-release col-6">
-      <div class="sample-section__section--pre-order">
-        <div class="text-h4 text-bold text-indigo-10">
-          <span>New releases</span>
-        </div>
-        <div class="row q-col-gutter-x-xl q-mt-lg q-col-gutter-y-xl">
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
-            ></ShopCard>
-          </div>
-          <div class="col-6">
-            <ShopCard
-              currency="$"
-              productName="The Chain"
-              :price="23.4"
-              artist="Steel Panther"
             ></ShopCard>
           </div>
         </div>
@@ -87,8 +32,18 @@
 </template>
 
 <script setup>
+import { storeToRefs } from "pinia";
 import AppContainer from "../common/AppContainer.vue";
 import ShopCard from "../common/ShopCard.vue";
+import { useCategoryStore } from "src/stores/categories";
+import { useCategoryDetailStore } from "src/stores/category-detail";
+import { onMounted } from "vue";
+
+const categoryDetail = useCategoryDetailStore();
+const { products } = storeToRefs(categoryDetail);
+onMounted(() => {
+  categoryDetail.fetchSampleProduct();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -98,29 +53,13 @@ import ShopCard from "../common/ShopCard.vue";
 }
 .sample-section__pre-order {
   background-color: $indigo-1;
-
   background-size: cover;
+  padding-bottom: 5rem;
 }
 .sample-section__section {
   margin-left: 6rem;
   margin-right: 6rem;
   margin-top: 3rem;
   position: relative;
-}
-.sample-section__section--pre-order {
-  margin-left: 6rem;
-  margin-right: 6rem;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
-}
-.tape {
-  display: block !important;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 2rem;
-  height: 30rem;
-  left: calc(50% - 3rem);
 }
 </style>

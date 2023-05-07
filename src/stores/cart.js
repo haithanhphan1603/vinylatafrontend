@@ -7,6 +7,8 @@ export const useCartStore = defineStore("cart", () => {
   if (JSON.parse(localStorage.getItem(CART_STORAGE))) {
     orderItems.value = JSON.parse(localStorage.getItem(CART_STORAGE));
   }
+  const voucher = ref(1);
+  const appliedVoucherId = ref("");
   function pushItemToCart(item) {
     const currentItems = [...orderItems.value];
     const filteredItems = orderItems.value.filter(
@@ -54,6 +56,12 @@ export const useCartStore = defineStore("cart", () => {
     }, 0);
     return total.toFixed(2);
   });
+  const totalDiscountPrice = computed(() => {
+    if (voucher.value !== 1) {
+      return totalPrice.value - totalPrice.value * voucher.value;
+    }
+    return totalPrice.value;
+  });
 
   return {
     pushItemToCart,
@@ -62,5 +70,8 @@ export const useCartStore = defineStore("cart", () => {
     increaseItem,
     decreaseItem,
     deleteItem,
+    totalDiscountPrice,
+    voucher,
+    appliedVoucherId,
   };
 });

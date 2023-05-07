@@ -39,6 +39,9 @@ import AppContainer from "src/components/common/AppContainer.vue";
 import { onMounted } from "vue";
 import { useVendorStore } from "src/stores/vendors";
 import { storeToRefs } from "pinia";
+import { useMeta } from "quasar";
+const metaData = { title: "Vinylata- Artists" };
+useMeta(metaData);
 const vendorStore = useVendorStore();
 const { vendors } = storeToRefs(vendorStore);
 

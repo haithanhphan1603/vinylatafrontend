@@ -43,7 +43,7 @@ const props = defineProps({
   price: Number,
   currency: String,
   artist: String,
-  id: String,
+  id: Number,
 });
 const productLink = computed(() => {
   return "/products/" + props.id;

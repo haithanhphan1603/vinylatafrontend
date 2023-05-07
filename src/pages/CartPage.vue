@@ -34,15 +34,17 @@
       </div>
     </div> -->
     <q-separator class="q-my-md"></q-separator>
-
-    <div v-for="(orderItem, index) in orderItems" :key="orderItem.id">
-      <CartCard
-        :item="orderItem"
-        @decrease="decrease(index)"
-        @increase="increase(index)"
-        @delete="deleteItem(index)"
-      ></CartCard>
+    <div v-if="orderItems.length">
+      <div v-for="(orderItem, index) in orderItems" :key="orderItem.id">
+        <CartCard
+          :item="orderItem"
+          @decrease="decrease(index)"
+          @increase="increase(index)"
+          @delete="deleteItem(index)"
+        ></CartCard>
+      </div>
     </div>
+    <div v-else class="text-h4 q-pa-sm">You have no item in cart yet</div>
     <q-separator class="q-my-md"></q-separator>
     <div>
       <div class="flex justify-between q-pt-lg">
@@ -62,15 +64,19 @@
               icon="mdi-album"
               unelevated
               label="Checkout"
+              :disable="!orderItems.length"
+              @click="$router.push('checkout')"
               class="text-weight-bold cart-checkout q-px-xl q-my-lg full-width"
             ></q-btn>
           </div>
           <div class="q-mt-sm">
             <q-btn
               unelevated
+              @click="$router.push('checkout')"
               icon="fa-brands fa-amazon-pay"
               label="Amazon Pay"
               color="blue-14"
+              :disable="!orderItems.length"
               class="cart-checkout text-weight-bold full-width"
             ></q-btn>
           </div>
@@ -79,6 +85,8 @@
               unelevated
               icon="fa-brands fa-paypal"
               label="PayPal"
+              :disable="!orderItems.length"
+              @click="$router.push('checkout')"
               color="light-blue-14"
               class="cart-checkout full-width text-weight-bold"
             ></q-btn>
@@ -88,6 +96,8 @@
               unelevated
               icon="fa-brands fa-google"
               color="cyan-14"
+              :disable="!orderItems.length"
+              @click="$router.push('checkout')"
               label="Google Pay"
               class="cart-checkout full-width text-weight-bold"
             ></q-btn>
@@ -105,6 +115,9 @@ import AppContainer from "src/components/common/AppContainer.vue";
 
 import { storeToRefs } from "pinia";
 import { usePersistCart } from "../composables/use-persisted-cart";
+import { useMeta } from "quasar";
+const metaData = { title: "Vinylata- Cart" };
+useMeta(metaData);
 usePersistCart();
 const cartStore = useCartStore();
 const { orderItems, totalPrice } = storeToRefs(cartStore);

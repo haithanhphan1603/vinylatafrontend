@@ -21,6 +21,7 @@
             padding="1rem"
             outline
             color="white"
+            @click="$router.push('/vendors')"
             >{{ buttonText }}</q-btn
           >
         </div>

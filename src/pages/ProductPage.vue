@@ -108,7 +108,7 @@ function addToCart() {
     image: product.value.productImage,
     name: product.value.productTitle,
     price: product.value.productPricing,
-    artist: product.value.artist,
+    artist: product.value.vendor?.vendorName,
     quantity: 1,
   });
   router.push("/cart");

@@ -14,42 +14,14 @@
         :modules="modules"
         class="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide v-for="category in categories" :key="category.id">
           <TheGenre
             class="q-mt-xl"
-            src="/collections/logo1.jpeg"
-            type="Rock"
+            :src="category.categoryImage"
+            :type="category.categoryName"
+            :to="category.id"
           ></TheGenre>
         </SwiperSlide>
-
-        <SwiperSlide
-          ><TheGenre
-            class="q-mt-xl"
-            src="/collections/logo2.png"
-            type="Country"
-          ></TheGenre
-        ></SwiperSlide>
-        <SwiperSlide
-          ><TheGenre
-            class="q-mt-xl"
-            src="/collections/logo3.jpeg"
-            type="Jazz"
-          ></TheGenre
-        ></SwiperSlide>
-        <SwiperSlide
-          ><TheGenre
-            class="q-mt-xl"
-            src="/collections/randb.jpeg"
-            type="R&B"
-          ></TheGenre
-        ></SwiperSlide>
-        <SwiperSlide
-          ><TheGenre
-            class="q-mt-xl"
-            src="/collections/hiphop.jpeg"
-            type="Hip Hop"
-          ></TheGenre
-        ></SwiperSlide>
       </Swiper>
     </AppContainer>
   </div>
@@ -60,13 +32,21 @@ import TheGenre from "../TheGenre.vue";
 import AppContainer from "../common/AppContainer.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useSwiper } from "swiper/vue";
+import { useCategoryStore } from "src/stores/categories";
 import "swiper/css";
 
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper";
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
 const modules = [Navigation];
 const swiper = useSwiper();
+const categoryStore = useCategoryStore();
+const { categories } = storeToRefs(categoryStore);
+onMounted(() => {
+  categoryStore.fetchSampleCategories();
+});
 </script>
 
 <style lang="scss" scoped>

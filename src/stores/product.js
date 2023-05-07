@@ -51,8 +51,10 @@ export const useProductStore = defineStore("product", () => {
     product.value = data.data;
     console.log(data.data);
   }
+ 
   return {
     fetchProduct,
     product,
+    
   };
 });

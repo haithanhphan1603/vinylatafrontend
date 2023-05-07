@@ -40,7 +40,9 @@ import { useCategoryStore } from "src/stores/categories";
 import { storeToRefs } from "pinia";
 const categoryStore = useCategoryStore();
 const { categories } = storeToRefs(categoryStore);
-
+import { useMeta } from "quasar";
+const metaData = { title: "Vinylata- Genres" };
+useMeta(metaData);
 onMounted(() => {
   categoryStore.fetchAll();
 });

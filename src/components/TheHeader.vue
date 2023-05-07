@@ -13,6 +13,13 @@
       <li>
         <router-link class="" to="/vendors">SHOP BY ARTISTS</router-link>
       </li>
+      <li v-if="!isAuth">
+        <router-link class="" to="/auth">LOGIN</router-link>
+      </li>
+      <li v-else>
+        <router-link class="" to="/order">ORDER</router-link>
+      </li>
+
       <li>
         <router-link class="flex flex-center" to="/cart">
           <q-icon
@@ -28,7 +35,21 @@
   </q-header>
 </template>
 
-<script setup></script>
+<script setup>
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "src/stores/auth";
+import { useRouter } from "vue-router";
+
+const authStore = useAuthStore();
+const { isAuth } = storeToRefs(authStore);
+const router = useRouter();
+authStore.checkAuth();
+
+function logout() {
+  authStore.logout();
+  router.push("/");
+}
+</script>
 
 <style lang="scss" scoped>
 .index-page__header {
@@ -42,5 +63,12 @@
 }
 .index-page__header li {
   padding: 1rem;
+}
+.logout:hover {
+  color: $indigo-9;
+}
+.logout {
+  cursor: pointer;
+  color: $primary;
 }
 </style>

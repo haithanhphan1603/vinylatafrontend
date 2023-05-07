@@ -29,7 +29,7 @@
     <SwiperSlide>
       <TheNews
         buttonText="shop now"
-        title="Newest Collections"
+        title="Latest Collections"
         extraDetails="Update everyweek"
         imgSrc="collection.webp"
       ></TheNews>

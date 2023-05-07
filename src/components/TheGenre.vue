@@ -34,7 +34,9 @@
           icon-right="mdi-chevron-right"
         >
           <div class="the-genre__button-content">
-            <div class="button-text">ORDER NOW</div>
+            <div @click="$router.push(`/genres/${to}`)" class="button-text">
+              ORDER NOW
+            </div>
           </div>
         </q-btn>
       </div>
@@ -43,10 +45,17 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+
 defineProps({
   src: String,
   type: String,
+  to: Number,
 });
+const router = useRouter();
+function navigate() {
+  router.push(`/${to}`);
+}
 </script>
 
 <style lang="scss" scoped>

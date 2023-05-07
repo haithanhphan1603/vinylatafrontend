@@ -16,6 +16,14 @@ export const useCategoryDetailStore = defineStore("category-details", () => {
     categoryName.value = data.data.categoryName;
     console.log(data);
   }
+  async function fetchSampleProduct() {
+    const response = await fetch(
+      "http://localhost:8080/api/products/main-shop"
+    );
+    const data = await response.json();
+    console.log(data);
+    products.value = data.data.products;
+  }
   // const products = ref([
   //   {
   //     id: 1,
@@ -63,5 +71,6 @@ export const useCategoryDetailStore = defineStore("category-details", () => {
     categoryBackground,
     categoryDescription,
     categoryName,
+    fetchSampleProduct,
   };
 });

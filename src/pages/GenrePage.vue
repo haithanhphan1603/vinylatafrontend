@@ -34,6 +34,9 @@ import ShopCard from "src/components/common/ShopCard.vue";
 import { useCategoryDetailStore } from "src/stores/category-detail";
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue";
+import { useMeta } from "quasar";
+const metaData = { title: "Vinylata" };
+useMeta(metaData);
 
 const categoryDetailStore = useCategoryDetailStore();
 const { products, categoryBackground, categoryName } =

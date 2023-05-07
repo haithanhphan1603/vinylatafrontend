@@ -19,6 +19,9 @@ import SampleSection from "../components/section/SampleSection.vue";
 import SubscribeSection from "src/components/section/SubscribeSection.vue";
 import IntroSection from "src/components/section/IntroSection.vue";
 import { usePersistCart } from "../composables/use-persisted-cart";
+import { useMeta } from "quasar";
+const metaData = { title: "Vinylata" };
+useMeta(metaData);
 usePersistCart();
 </script>
 <style lang="scss" scoped>

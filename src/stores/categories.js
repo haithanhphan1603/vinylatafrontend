@@ -27,5 +27,12 @@ export const useCategoryStore = defineStore("categories", () => {
     categories.value = data.data;
     console.log(data.data);
   }
-  return { categories, fetchAll };
+  async function fetchSampleCategories() {
+    const response = await fetch(
+      "http://localhost:8080/api/products/main-shop"
+    );
+    const data = await response.json();
+    categories.value = data.data.categories;
+  }
+  return { categories, fetchAll, fetchSampleCategories };
 });

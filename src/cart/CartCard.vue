@@ -1,6 +1,6 @@
 <template>
   <q-card class="row flex justify-between q-my-md" square flat bordered>
-    <q-card-section class="col-6 flex">
+    <q-card-section class="col-8 flex">
       <q-img :src="item.image" width="10rem" height="10rem"></q-img>
       <div class="q-pl-xl q-pt-lg">
         <div class="text-h5 text-weight-medium">Title: {{ item.name }}</div>
@@ -11,7 +11,7 @@
         </div>
       </div>
     </q-card-section>
-    <q-card-section class="col-6 flex flex-center">
+    <q-card-section class="col-4 flex flex-center">
       <div class="row full-width">
         <div class="col-4 flex flex-center">
           <q-btn
@@ -54,7 +54,7 @@ const props = defineProps({
   item: Object,
 });
 const totalPrice = computed(() => {
-  return props.item?.price * props.item?.quantity;
+  return (props.item?.price * props.item?.quantity).toFixed(2);
 });
 </script>
 
